@@ -21,7 +21,7 @@
     "extends": [
       "react-app",
       "react-app/jest",
-      "plugin:cypress/recomended"
+      "plugin:cypress/recommended"
     ]
   },
   "browserslist": {
