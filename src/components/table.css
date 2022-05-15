@@ -10,12 +10,9 @@ table {
 button {
     background-color: rgb(37, 112, 203);
     color: aliceblue;
-    margin-left: 600px;
-    margin-top: 5px;
-    
-   border-radius: 5px;
-   display: flex;
-   flex-direction: row-reverse;
-   
-  }
+    display: block;
+    border-radius: 5px;
+    margin:auto;
+}
+
 

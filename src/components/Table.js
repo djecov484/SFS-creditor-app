@@ -83,7 +83,7 @@ class Table extends React.Component {
     return (
       
       <div>
-        <table align="center">
+        <table id={"creditors_table"} align="center">
           <thead>
             <tr>
               <td></td>
@@ -113,15 +113,15 @@ class Table extends React.Component {
             </tr>
             <tr>
               <td>Total </td>
-              <td>{this.totalSum()}</td>
+              <td>{this.totalSum().toLocaleString()}</td>
             </tr>
             <tr>
               <td>Total Checked</td>
-              <td>{this.totalCheckedRows()}</td>
+              <td id={"total_rows_label"}>{this.totalCheckedRows()}</td>
             </tr>
             <tr>
-              <td>Checked Row Count</td>
-              <td>{this.totalCheckedSum()}</td>
+              <td>Checked Rows Sum</td>
+              <td>{this.totalCheckedSum().toLocaleString()}</td>
             </tr>
           </tbody>
         </table>
@@ -137,19 +137,33 @@ const TableRow = ({ row, handleCheckboxChange, index }) => (
     <td>
       <input type="checkbox" value={index} onChange={handleCheckboxChange} />
     </td>
-    {Object.values(row).map((val, i) => i !== 0 && <td key={i}>{val}</td>)}
+      <td>
+          {row.creditorName}
+      </td>
+      <td>
+          {row.firstName}
+      </td>
+      <td>
+          {row.lastName}
+      </td>
+      <td>
+          {Number(row.minPaymentPercentage).toFixed(2)}
+      </td>
+      <td>
+          {Number(row.balance).toLocaleString()}
+      </td>
   </tr>
 );
 
 const AddRowButton = ({ addRow }) => (
-  <button
+  <button id={"add_row_btn"}
     onClick={() =>
       addRow({
         id: 4,
         creditorName: "CBNA",
         firstName: "Suman",
         lastName: "Tester79",
-        minPaymentPercentage: 2.0,
+        minPaymentPercentage: '2.00',
         balance: 100.0
       })
     }
@@ -159,7 +173,7 @@ const AddRowButton = ({ addRow }) => (
 );
 
 const RemoveLastRowButton = ({ removeLastRow }) => (
-  <button onClick={() => removeLastRow()}>REMOVE DEBT</button>
+  <button id={"remove_row_btn"} onClick={() => removeLastRow()}>REMOVE DEBT</button>
 );
 
 render(<Table />, document.getElementById("root"));
