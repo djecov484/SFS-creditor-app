@@ -1,3 +1,7 @@
+Link to the video recording :https://www.loom.com/share/03eb58f21908474aa799e1e6adc3abbb
+To watch the vide please sign up to Loom. (It is free). 
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
